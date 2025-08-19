@@ -33,7 +33,7 @@ describe("QuickStatsDialog", function () {
       await page.waitForNetworkIdle();
 
       // Take a screenshot of the dialog
-      const dialog = await page.$('.ui-confirm .quick-stat-dialog-content');
+      const dialog = await page.$('.card-container');
       expect(await dialog.screenshot()).to.matchImage('QuickStatsDialog');
     });
 });
