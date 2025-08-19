@@ -7,31 +7,42 @@
 
 <template>
   <div class="quick-stat-component">
-    <a class="btn" target="_blank" v-on:click="showQuickStatsDialog">Quick Stats</a>
-
+    <a class="btn-flat" target="_blank" v-on:click="showQuickStatsDialog">Quick Stats</a>
     <MatomoDialog v-model="showDialog">
       <div class="ui-confirm">
         <h2>Visitor Stats</h2>
         <ActivityIndicator :loading="loading"/>
-        <div class="card-container" v-show="!loading">
-          <div class="card">
-            <div class="card-content">
-                Visits: {{ visits }}
+        <div class="card-container" v-show="!loading" style="margin-top: 20px">
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content center-align">
+                  Visits: {{ visits }}
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content center-align">
+                  Visitors: {{ visitors }}
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-content">
-              Visitors: {{ visitors }}
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content center-align">
+                  Actions: {{ actions }}
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-content">
-              Actions: {{ actions }}
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-content">
-              Visits Converted: {{ visitsConverted }}
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-content center-align">
+                  Visits Converted: {{ visitsConverted }}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -46,6 +57,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .card-container {
+    margin-top: 200px;
   }
 </style>
 
@@ -71,10 +85,10 @@ export default defineComponent({
     return {
       showDialog: false,
       loading: true,
-      visits: '1',
-      actions: '1',
-      visitors: '1',
-      visitsConverted: '1',
+      visits: '0',
+      actions: '0',
+      visitors: '0',
+      visitsConverted: '0',
     };
   },
   watch: {
