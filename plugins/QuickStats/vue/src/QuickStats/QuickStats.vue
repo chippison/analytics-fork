@@ -7,7 +7,9 @@
 
 <template>
   <div class="quick-stat-component">
-    <a class="btn-flat" target="_blank" v-on:click="showQuickStatsDialog">Quick Stats</a>
+    <a class="btn-flat" target="_blank" v-on:click="showQuickStatsDialog">
+      <span class="icon-info"></span> Quick Stats
+    </a>
     <MatomoDialog v-model="showDialog">
       <div class="ui-confirm quick-stat-dialog-content">
         <h2>Visitor Stats</h2>
