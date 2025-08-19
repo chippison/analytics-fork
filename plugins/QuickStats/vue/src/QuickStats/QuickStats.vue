@@ -94,10 +94,7 @@ export default defineComponent({
   watch: {
     showDialog(val) {
       if (val) {
-        console.log('Dialog opened');
         this.getQuickStats();
-      } else {
-        console.log('Dialog closed');
       }
     },
   },
@@ -112,7 +109,6 @@ export default defineComponent({
         lastMinutes: 120,
         format: 'json',
       }).then((response) => {
-        console.log('i got responses', response[0]);
         const resp = response[0];
         this.visits = resp.visits;
         this.actions = resp.actions;

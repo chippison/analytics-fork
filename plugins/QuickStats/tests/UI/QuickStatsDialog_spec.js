@@ -10,16 +10,6 @@
 describe("QuickStatsDialog", function () {
     this.timeout(0);
 
-    // uncomment this if you want to define a custom fixture to load before the test instead of the default one
-    // this.fixture = "Piwik\\Plugins\\QuickStats\\tests\\Fixtures\\YOUR_FIXTURE_NAME";
-
-    var generalParams = 'idSite=1&period=day&date=2010-01-03',
-        urlBase = 'module=CoreHome&action=index&' + generalParams;
-
-    // before(function () {
-    //     testEnvironment.pluginsToLoad = ['QuickStats'];
-    //     testEnvironment.save();
-    // });
     it('should show the QuickStats dialog', async function () {
       await page.goto("?module=CoreHome&action=index&idSite=1&period=day&date=today");
       await page.waitForNetworkIdle();
