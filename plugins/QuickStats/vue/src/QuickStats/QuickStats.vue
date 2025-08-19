@@ -9,7 +9,7 @@
   <div class="quick-stat-component">
     <a class="btn-flat" target="_blank" v-on:click="showQuickStatsDialog">Quick Stats</a>
     <MatomoDialog v-model="showDialog">
-      <div class="ui-confirm">
+      <div class="ui-confirm quick-stat-dialog-content">
         <h2>Visitor Stats</h2>
         <ActivityIndicator :loading="loading"/>
         <div class="card-container" v-show="!loading" style="margin-top: 20px">
@@ -109,7 +109,7 @@ export default defineComponent({
       AjaxHelper.fetch({
         method: 'Live.getCounters',
         idSite: 1,
-        lastMinutes: 240,
+        lastMinutes: 120,
         format: 'json',
       }).then((response) => {
         console.log('i got responses', response[0]);
