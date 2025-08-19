@@ -6,7 +6,8 @@ Clicking the button will show a modal with the stats taken from the API endpoint
 The vue component is then injected into the footer using `Template.pageFooter` hook.
 ### How this works
 This feature uses a Vue component to display the stats. 
-It fetches the data from the Matomo API using AjaxHelper component to get data from `Live.getCounters` method, which returns the last visits, their actions and other statistics.
+It fetches the data from the Matomo API using AjaxHelper component to get data from `Live.getCounters` method, 
+which returns the last visits, their actions and other statistics.
 
 ### Initial Setup
  - Create fake visits in the last 120 minutes using 
@@ -15,6 +16,12 @@ It fetches the data from the Matomo API using AjaxHelper component to get data f
    ddev matomo:console visitorgenerator:generate-visits
    ```
  - Make sure the `Live.getCounters` API method is enabled in your Matomo instance.
+ - Make sure to enable the `QuickStats` plugin in your Matomo instance.
+   - You can enable the plugin using the following command:
+     ```
+     ddev matomo:console plugin:activate QuickStats
+     ```
+   - Alternatively, you can enable it from the Matomo UI by going to the "Plugins" section and activating the "QuickStats" plugin.
 ### Running the Test
  - To run the test, you can use the following command:
    ```
