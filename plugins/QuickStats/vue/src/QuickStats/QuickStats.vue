@@ -7,10 +7,7 @@
 
 <template>
   <div class="quick-stat-component">
-    <a class="btn" target="_blank" v-on:click="increment">Quick Stats</a>
-    <button v-on:click="decrement">-</button>
-    {{ count }}
-    <button v-on:click="increment">+</button>
+    <a class="btn" target="_blank" v-on:click="showQuickStatsDialog">Quick Stats</a>
 
     <MatomoDialog v-model="showDialog">
       <div class="ui-confirm">
@@ -38,7 +35,6 @@ import { defineComponent } from 'vue';
 import { MatomoDialog } from 'CoreHome';
 
 interface QuickStatsState {
-  count: number;
   showDialog: boolean;
 }
 
@@ -48,18 +44,12 @@ export default defineComponent({
   },
   data(): QuickStatsState {
     return {
-      count: 12,
       showDialog: false,
     };
   },
   methods: {
-    increment() {
-      this.count += 1;
-      this.showDialog = this.count > 15;
-    },
-    decrement() {
-      this.count -= 1;
-      this.showDialog = this.count > 15;
+    showQuickStatsDialog() {
+      this.showDialog = true;
     },
   },
 });
