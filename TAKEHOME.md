@@ -23,3 +23,12 @@ It fetches the data from the Matomo API using AjaxHelper component to get data f
  - There are a few gotchas with running the tests:
    - Remember to use `ddev matomo:console test:run-ui --plugin=PluginName` instead of `./console test:run-ui --plugin=QuickStats` 
    to ensure the correct environment is used.
+
+
+### Other Testing Considerations
+ - I would probably add a SystemTest to check that the api we use `Live.getCounters` is returning the expected data.
+   - I will put this under `plugin/QuickStats/tests/System`
+ - I'll also add in an integreation test to check that the Vue component is rendering correctly and that the data is being displayed as expected.
+   - This should also test that when the button is clicked the modal opens.
+   - This could also test that when the modal is opened, the API to fetch counters is called and that the data is displayed correctly.
+   - This will be under `plugin/QuickStats/tests/Integration`
