@@ -22,6 +22,12 @@ which returns the last visits, their actions and other statistics.
      ddev matomo:console plugin:activate QuickStats
      ```
    - Alternatively, you can enable it from the Matomo UI by going to the "Plugins" section and activating the "QuickStats" plugin.
+### Future Improvements
+ - The current implementation is a basic one. 
+ - Make the UI look better by styling the footer button more and making the statistics cards more visually appealing.
+ - The Vue component could be made more reusable by passing in the API `lastMinutes` parameter as a prop.
+ - Would also be good to pass the `idSite` parameter as a prop especially if there are more than 1 website added in Matomo.
+
 ### Running the Test
  - To run the test, you can use the following command:
    ```
